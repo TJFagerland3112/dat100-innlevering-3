@@ -57,17 +57,11 @@ public abstract class Innlegg {
 	}
 	
 	public void doLike () {
-		likes =  this.likes + 1;
+		likes++;
 	}
 	
 	public boolean erLik(Innlegg innlegg) {
-		boolean erlik = false;
-
-        if (innlegg.getId() != this.id) {
-             return erlik;
-        }    else erlik = true;
-
-        return erlik;
+		return (innlegg.getId() == this.id);
 	}
 	
 	@Override

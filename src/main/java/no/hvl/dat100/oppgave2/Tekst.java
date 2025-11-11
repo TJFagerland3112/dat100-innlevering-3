@@ -24,18 +24,17 @@ public class Tekst extends Innlegg {
     }
 	
 	public String getTekst() {
-		throw new UnsupportedOperationException(TODO.method());
+		return tekst;
 
 	}
 
 	public void setTekst(String tekst) {
-		throw new UnsupportedOperationException(TODO.method());
+		this.tekst = tekst;
 	}
 
 	@Override
 	public String toString() {
-		return super.toString() + "\n" + this.tekst + "\n";
-
+		return "Tekst" + "\n" + super.toString() + "\n" + this.tekst + "\n";
 	}
 	
 	// Metoden nedenfor er kun for valgfri oppgave 6

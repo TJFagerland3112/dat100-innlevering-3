@@ -19,14 +19,7 @@ public class Blogg {
     }
 
 	public int getAntall() {
-        int antall = 0;
-
-		for (int i = 0; i < innleggtabell.length; i++) {
-            if (innleggtabell[i] != null) {
-                antall = i;
-            } else break;
-        }
-        return antall;
+        return nesteledig;
 	}
 	
 	public Innlegg[] getSamling() {
@@ -35,45 +28,31 @@ public class Blogg {
 	}
 	
 	public int finnInnlegg(Innlegg innlegg) {
-        int innleggPeker = 0;
-        for (int i = 0; i < innleggtabell.length; i++) {
-            if (innlegg.erLik(innleggtabell[i])) {
+        int innleggPeker = -1;
+        int i = 0;
+        while (i < nesteledig && innleggPeker < 0) {
+            if (innleggtabell[i].erLik(innlegg)) {
                 innleggPeker = i;
-                break;
-            } else;
+            } else {
+                i++;
+            }
         }
         return innleggPeker;
 	}
 
 	public boolean finnes(Innlegg innlegg) {
-        boolean finnes = false;
-		for (int i = 0; i < innleggtabell.length; i++) {
-            if (innlegg.getId() != innleggtabell[i].getId()) {
-                finnes = false;
-            } else {
-                finnes = true;
-                break;}
-        }
-        return finnes;
+        return (finnInnlegg(innlegg) >= 0);
 	}
 
 	public boolean ledigPlass() {
-        boolean ledigplass = false;
-
-		for (int i = 0; i < innleggtabell.length; i++) {
-            if (innleggtabell[i] == null) {
-                ledigplass = true;
-                break;
-            } else ledigplass = false;
-        }
-        return ledigplass;
+        return (nesteledig < innleggtabell.length);
 	}
 	
 	public boolean leggTil(Innlegg innlegg) {
 
         boolean sattinn = false;
 
-        if (nesteledig < innleggtabell.length) {
+        if (!finnes(innlegg) && ledigPlass()) {
             innleggtabell[nesteledig] = innlegg;
             nesteledig++;
             sattinn = true;
@@ -83,10 +62,10 @@ public class Blogg {
 	
 	public String toString() {
 
-        String result = this.innleggtabell.length + "\n";
+        String result = nesteledig + "\n";
 
-		for (int i = 0; i < innleggtabell.length; i++) {
-            result += innleggtabell[i].toString();
+        for (int i = 0; i < nesteledig; i++) {
+            result = result + innleggtabell[i].toString();
         }
         return result;
 	}
