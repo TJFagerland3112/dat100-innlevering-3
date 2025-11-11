@@ -1,6 +1,6 @@
 package no.hvl.dat100.oppgave1;
 
-import no.hvl.dat100.common.TODO;
+
 
 public abstract class Innlegg {
 	
@@ -72,9 +72,5 @@ public abstract class Innlegg {
 	}
 	
 	// Metoden nedenfor er kun for valgfri oppgave 6
-	public String toHTML() {
-		
-		throw new UnsupportedOperationException(TODO.method());
-				
-	}
+
 }

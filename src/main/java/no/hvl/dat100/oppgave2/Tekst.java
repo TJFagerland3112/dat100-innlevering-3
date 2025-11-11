@@ -1,6 +1,6 @@
 package no.hvl.dat100.oppgave2;
 
-import no.hvl.dat100.common.TODO;
+
 import no.hvl.dat100.oppgave1.*;
 
 public class Tekst extends Innlegg {
@@ -38,9 +38,5 @@ public class Tekst extends Innlegg {
 	}
 	
 	// Metoden nedenfor er kun for valgfri oppgave 6
-	public String toHTML() {
-			
-		throw new UnsupportedOperationException(TODO.method());
-				
-	}
+
 }

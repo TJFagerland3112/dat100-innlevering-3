@@ -1,6 +1,5 @@
 package no.hvl.dat100.oppgave3;
 
-import no.hvl.dat100.common.TODO;
 import no.hvl.dat100.oppgave1.*;
 
 public class Blogg {
@@ -59,37 +58,18 @@ public class Blogg {
         }
         return sattinn;
 	}
-	
+	@Override
 	public String toString() {
 
-        String result = nesteledig + "\n";
+        StringBuilder result = new StringBuilder(nesteledig + "\n");
 
         for (int i = 0; i < nesteledig; i++) {
-            result = result + innleggtabell[i].toString();
+            result.append(innleggtabell[i].toString());
         }
-        return result;
+        return result.toString();
 	}
 
 	// valgfrie oppgaver nedenfor
 	
-	public void utvid() {
-		throw new UnsupportedOperationException(TODO.method());
-	}
-	
-	public boolean leggTilUtvid(Innlegg innlegg) {
 
-		throw new UnsupportedOperationException(TODO.method());
-		
-	}
-	
-	public boolean slett(Innlegg innlegg) {
-		
-		throw new UnsupportedOperationException(TODO.method());
-	}
-	
-	public int[] search(String keyword) {
-		
-		throw new UnsupportedOperationException(TODO.method());
-
-	}
 }
