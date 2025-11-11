@@ -7,10 +7,6 @@ public class Tekst extends Innlegg {
 
 	private String tekst;
 	
-	public Tekst () {
-		
-	}
-	
 	public Tekst(int id, String bruker, String dato, String tekst) {
 		super(id, bruker, dato);
         this.tekst = tekst;
@@ -36,7 +32,5 @@ public class Tekst extends Innlegg {
 	public String toString() {
 		return "Tekst" + "\n" + super.toString() + "\n" + this.tekst + "\n";
 	}
-	
-	// Metoden nedenfor er kun for valgfri oppgave 6
 
 }

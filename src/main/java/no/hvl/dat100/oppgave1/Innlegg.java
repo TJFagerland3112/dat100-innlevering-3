@@ -70,7 +70,5 @@ public abstract class Innlegg {
 		return this.id + "\n" + this.bruker + "\n" + this.dato + "\n" + this.likes + "\n";
 				
 	}
-	
-	// Metoden nedenfor er kun for valgfri oppgave 6
 
 }

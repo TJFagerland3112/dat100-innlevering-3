@@ -68,8 +68,4 @@ public class Blogg {
         }
         return result.toString();
 	}
-
-	// valgfrie oppgaver nedenfor
-	
-
 }
